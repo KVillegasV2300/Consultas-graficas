@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Informacion basica :b-->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen | Consultas</title>
+
+    <!--Librerias and stuff (OSEA EL BOOTSTRAP Y LAS TONTERIAS PARA GRAFICAS)-->
+    <link rel = "stylesheet" href = "{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!--Archivos js super duper necesarios-->
+    <script src = "{{ url_for('static', filename='js/graphics.js') }}"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">[ K ]</a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Consultas</a>
+                <a class="nav-link" href="/about">Acerca de</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--AQUI ES DONDE SE INYECTA EL CONTENIDO DE LAS PAGINAS, OSEA EL INDEX Y EL ABOUT-->
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

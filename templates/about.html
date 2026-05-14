@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>Datos</h1>
+<p>Los datos utilizados para este analisis son los siguientes:</p>
+<div>
+<img src="{{ url_for('static', filename='img/datos.png') }}" alt="Datos" class="img-fluid">
+</div>
+<a href="/" class="btn btn-secondary">Volver</a>
+{% endblock %}

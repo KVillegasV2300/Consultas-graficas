@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>Consultas de estadisticas</h1>
+<p>En esta pagina se muestran las consultas de estadisticas realizadas a los datos de peso, altura, velocidad y color.
+    Estas consultas incluyen la frecuencia absoluta, frecuencia relativa, frecuencia acumulada, poligono de frecuencias 
+    y medidas de tendencia central (media, mediana y moda) como se pide tal cual en la tarea.
+</p>
+<br>
+<p>Seleccione una opción para ver las consultas estadísticas:</p>
+
+<div class="btn-group">
+  <a href="/weight" class="btn btn-primary">Peso</a>
+  <a href="/height" class="btn btn-primary">Altura</a>
+  <a href="/velocity" class="btn btn-primary">Velocidad</a>
+  <a href="/color" class="btn btn-primary">Color</a>
+</div>
+
+{% endblock %}

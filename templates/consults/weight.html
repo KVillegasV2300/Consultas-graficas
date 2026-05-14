@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>Frecuencia Absoluta (Grafica de barras)</h1>
+<p>A continuacion se muestra la frecuencia absoluta de los datos de peso.
+    Estos exponene las frecuencias de cada valor unico de la columna de peso, osea
+    cuantas veces se repite cada valor unico en la columna de peso.
+    (Pudiendose lograr con la fomula: f1+f2+f3....+fn = N)
+</p>
+<!--Insertar logica-->
+<div id="grafica de Peso"></div>
+<button onclick="freq_abs_graph('{{ freq_abs | safe }}', 'grafica de Peso')">Generar Grafica</button>
+
+
+<h1>Frecuencia Relativa (Diagrama de pastel)</h1>
+<p>A continuacion se muestra la frecuencia relativa de los datos de peso.
+    Estos exponene las frecuencias relativas de cada valor unico de la columna de peso, osea
+    el porcentaje que representa cada valor unico en la columna de peso.
+    (Pudiendose lograr con la fomula: ni = fi/N)
+</p>
+<!--Insertar logica-->
+<div id="grafica de Frecuencia Relativa"></div>
+<button onclick="freq_rel_graph('{{ freq_rel | safe }}', 'grafica de Frecuencia Relativa')">Generar Grafica</button>
+
+<h1>Frecuencia Acumulada</h1>
+<p>A continuacion se muestra la frecuencia acumulada de los datos de peso.
+    Estos exponene las frecuencias acumuladas de cada valor unico de la columna de peso, osea
+    la suma de las frecuencias absolutas de cada valor unico y los valores anteriores.
+</p>
+<!--Insertar logica-->
+<div id="grafica de Frecuencia Acumulada"></div>
+<button onclick="freq_acum_graph('{{ freq_acum | safe }}', 'grafica de Frecuencia Acumulada')">Generar Grafica</button>
+
+<h1>Poligono de Frecuencias</h1>
+<p>A continuacion se muestra el poligono de frecuencias de los datos de peso.
+    Este es una grafica que une los puntos medios de las barras de la grafica de frecuencia absoluta, osea
+    une los puntos medios de las barras de la grafica de frecuencia absoluta con lineas, formando un poligono.
+<!--Insertar logica-->
+<div id="grafica de Poligono de Frecuencias"></div>
+<button onclick="pol_frec_graph('{{ freq_abs | safe }}', 'grafica de Poligono de Frecuencias')">Generar Grafica</button>
+
+<h1>Medidas de Tendencia Central</h1>
+
+<div>
+<li><h4>Media: {{ mean }}</h4></li>
+<li><h4>Mediana: {{ median }}</h4></li>
+<li><h4>Moda: {{ mode }}</h4></li>
+</div>
+<a href="/" class="btn btn-secondary">Volver</a>
+{% endblock %}
