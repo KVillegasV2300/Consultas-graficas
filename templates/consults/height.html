@@ -1,23 +1,23 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<h1>Datos de Peso</h1>
+<h1>Datos de Altura</h1>
 
 <h2>Frecuencia Absoluta (Grafica de barras)</h2>
-<p>A continuacion se muestra la frecuencia absoluta de los datos de peso.
-    Estos exponene las frecuencias de cada valor unico de la columna de peso, osea
-    cuantas veces se repite cada valor unico en la columna de peso.
+<p>A continuacion se muestra la frecuencia absoluta de los datos de altura.
+    Estos exponene las frecuencias de cada valor unico de la columna de altura, osea
+    cuantas veces se repite cada valor unico en la columna de altura.
     (Pudiendose lograr con la fomula: f1+f2+f3....+fn = N)
 </p>
 <!--Insertar logica-->
-<div id="grafica de Peso"></div>
-<button onclick="freq_abs_graph('{{ freq_abs | safe }}', 'grafica de Peso')">Generar Grafica</button>
+<div id="grafica de Altura"></div>
+<button onclick="freq_abs_graph('{{ freq_abs | safe }}', 'grafica de Altura')">Generar Grafica</button>
 
 
 <h2>Frecuencia Relativa (Diagrama de pastel)</h2>
-<p>A continuacion se muestra la frecuencia relativa de los datos de peso.
-    Estos exponene las frecuencias relativas de cada valor unico de la columna de peso, osea
-    el porcentaje que representa cada valor unico en la columna de peso.
+<p>A continuacion se muestra la frecuencia relativa de los datos de altura.
+    Estos exponene las frecuencias relativas de cada valor unico de la columna de altura, osea
+    el porcentaje que representa cada valor unico en la columna de altura.
     (Pudiendose lograr con la fomula: ni = fi/N)
 </p>
 <!--Insertar logica-->
@@ -25,8 +25,8 @@
 <button onclick="freq_rel_graph('{{ freq_rel | safe }}', 'grafica de Frecuencia Relativa')">Generar Grafica</button>
 
 <h2>Frecuencia Acumulada</h2>
-<p>A continuacion se muestra la frecuencia acumulada de los datos de peso.
-    Estos exponene las frecuencias acumuladas de cada valor unico de la columna de peso, osea
+<p>A continuacion se muestra la frecuencia acumulada de los datos de altura.
+    Estos exponene las frecuencias acumuladas de cada valor unico de la columna de altura, osea
     la suma de las frecuencias absolutas de cada valor unico y los valores anteriores.
 </p>
 <!--Insertar logica-->
@@ -34,14 +34,14 @@
 <button onclick="freq_acum_graph('{{ freq_acum | safe }}', 'grafica de Frecuencia Acumulada')">Generar Grafica</button>
 
 <h2>Poligono de Frecuencias</h2>
-<p>A continuacion se muestra el poligono de frecuencias de los datos de peso.
+<p>A continuacion se muestra el poligono de frecuencias de los datos de altura.
     Este es una grafica que une los puntos medios de las barras de la grafica de frecuencia absoluta, osea
     une los puntos medios de las barras de la grafica de frecuencia absoluta con lineas, formando un poligono.
 <!--Insertar logica-->
 <div id="grafica de Poligono de Frecuencias"></div>
 <button onclick="pol_frec_graph('{{ freq_abs | safe }}', 'grafica de Poligono de Frecuencias')">Generar Grafica</button>
 
-<h2>Medidas de Tendencia Central</h2>
+<h1>Medidas de Tendencia Central</h1>
 
 <div>
 <li><h4>Media: {{ mean }}</h4></li>

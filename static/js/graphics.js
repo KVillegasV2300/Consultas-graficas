@@ -4,10 +4,14 @@ function clean_graph(id){
     document.getElementById(id).innerHTML = '';
 }
 
-function freq_abs_graph(data, id){
+function freq_abs_graph(data, id, type="num"){
     clean_graph(id);
 
-    new_data = eval('[' + data + ']');
+    if (type == "num") {
+        new_data = eval('[' + data + ']');
+    } else if (type == "char") {
+        new_data = data
+    }
 
     new Morris.Bar({
         element: id,
@@ -20,10 +24,14 @@ function freq_abs_graph(data, id){
 
 }
 
-function freq_rel_graph(data, id){
+function freq_rel_graph(data, id, type="num"){
     clean_graph(id);
 
-    new_data = eval('[' + data + ']');
+    if (type == "num") {
+        new_data = eval('[' + data + ']');
+    } else if (type == "char") {
+        new_data = data
+    }
 
     new Morris.Donut({
         element: id,
@@ -32,25 +40,34 @@ function freq_rel_graph(data, id){
     });
 }
 
-function freq_acum_graph(data, id){
+function freq_acum_graph(data, id, type="num"){
     clean_graph(id);
 
-    new_data = eval('[' + data + ']');
+    if (type == "num") {
+        new_data = eval('[' + data + ']');
+    } else if (type == "char") {
+        new_data = data
+    }
+
     new Morris.Line({
         element: id,
         data: new_data,
         xkey: 'x',
         ykeys: ['y'],
         labels: ['Frecuencia Acumulada'],
-        resize: true
-        
+        resize: true,
+        parseTime: false
     });
 }
 
-function pol_frec_graph(data, id){
+function pol_frec_graph(data, id, type="num"){
     clean_graph(id);
 
-    new_data = eval('[' + data + ']');
+    if (type == "num") {
+        new_data = eval('[' + data + ']');
+    } else if (type == "char") {
+        new_data = data
+    }
 
     new Morris.Line({
         element: id,
@@ -58,6 +75,7 @@ function pol_frec_graph(data, id){
         xkey: 'x',
         ykeys: ['y'],
         labels: ['Poligono de Frecuencia'],
-        resize: true
+        resize: true,
+        parseTime: false
     });
 }
